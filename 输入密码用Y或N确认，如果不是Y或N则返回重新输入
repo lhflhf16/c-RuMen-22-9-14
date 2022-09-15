@@ -1,0 +1,39 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	char arr[40];
+	int ch = 0;
+	printf("请输入六位整数密码\n");
+	scanf("%d", arr);
+	while ((getchar()) != '\n')//用来清空输入缓冲区的多余的内容，这样下次遇到getchar就会停下等待输入。
+	{
+		;
+	}
+	printf("确认密码(Y/N)\n");
+	while ((ch = getchar()) != EOF)//用来进入循环，意思为只要输入有字符就会进入循环，想要结束要用break；或者ctrl+z。
+	{
+		if (ch == 'Y')//判断while循环中的getchar获取的内容
+		{
+			printf("确认成功\n");
+			break;
+		}
+		else if (ch == 'N')
+		{
+			printf("放弃确认\n");
+			break;
+		}
+		else//当输入不为Y/N时要返回判定条件重新输入，但是要注意输入缓冲区中此时还存在'\n'所以一定要注意清空输入缓冲区
+		{
+			printf("输入Y/N\n");
+		}
+		while ((getchar()) != '\n')//再次清空输入缓冲区，注意就是只要需要让getchar获取内容时都记得要清空输入缓冲区，因为一般都会有一个'\n'在里面。
+		{
+			;
+		}
+	}
+	return 0;
+}

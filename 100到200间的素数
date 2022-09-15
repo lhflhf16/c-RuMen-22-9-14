@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int i = 0;
+	int s = 0;
+	int n = 2;
+	for (i = 100; i <= 200; i++)//说明在100到200之间找素数。
+	{
+		for (n = 2; n < i; n++)//素数的一种找法例如n如果是素数那用n除以1到（n-1）的所有数，如果余数都不为零则是素数。
+		{
+			if (i%n != 0)//判断如果余数i%n不等于0则执行if里的语句，为0则说明不是素数，则跳出当前for循环，i++，计算下一个数。
+			{
+				if (n == i - 1)//如果n这时不等于（i-1）则执行n++，一直到n=i-1时如果余数都不为0，则打印i为素数。
+				{
+					printf("%d ", i);
+				}
+			}
+			else//如果i%n为0则直接换一个i
+			{
+				break;
+			}
+		}
+	}
+	return 0;
+}

@@ -1,0 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<string.h>
+
+#define MAX(x,y) (x>y?x:y)
+#define MIN(x,y) (x>y?y:x)
+
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int r = 0;
+	int m = 0;
+	int l = 0;
+	scanf("%d%d%d", &a, &b, &c);
+	int n1 = MAX(a, b);//这三个取大值的公式可以得出两个相等的值（最大值）和一个中间值
+	int n2 = MAX(b, c);
+	int n3 = MAX(a, c);
+	if (n1 > n2)//说明n1是最大值，而n2是中间值，最小值就是对对获得中间值的那两个数取小数。
+	{
+		r = n1;
+		m = n2;
+		l = MIN(b, c);
+	}
+	else if (n1 < n2)//说明n2是最大值，同上
+	{
+		r = n2;
+		m = n1;
+		l = MIN(a, b);
+	}
+	else//说明n1=n2都是最大值，n3是中间值
+	{
+		r = n1;
+		m = n3;
+		l = MIN(a, c);
+	}
+	printf("%d>%d>%d", r, m, l);
+	return 0;
+}

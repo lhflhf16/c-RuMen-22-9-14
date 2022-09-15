@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	scanf("%d %d %d", &a, &b, &c);
+	if (a < b)//如果a>b就不用管了，因为我们本来就是要的a>b,经过这条if后a就会大于b
+	{
+		int tmp = a;//定义这个的目的是为了把a的值保留下来，如果直接a=b；那么a之前的值就不见了，就不能赋值给b了
+		a = b;//tmp是局部变量，每次if结束后它的生命周期就结束了，不会保留值。
+		b = tmp;
+	}
+	if (a<c)//经过这条if后，a就会大于c
+	{
+		int tmp = a;
+		a = c;
+		c = tmp;
+	}
+	if (b < c)//经过这条if后b就会大于c
+	{
+		int tmp = b;
+		b = c;
+		c = tmp;
+	}
+	printf("%d %d %d ",a, b, c);//这个就表示最终要把最大的值放在a中，最小c中。
+	return 0;
+}

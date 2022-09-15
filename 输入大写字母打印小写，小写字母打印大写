@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int ch = 0;
+	while ((ch = getchar()) != EOF)
+	{
+		if (ch >= 'A' && ch <= 'Z')
+		{
+			printf("%c", (ch + '\040'));
+		}
+		else if (ch>='a' && ch <= 'z')
+		{
+			printf("%c", (ch - '\040'));
+		}
+		else
+		{
+			;
+		}
+	}
+	return 0;
+}

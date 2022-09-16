@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+
+int main()
+{
+	int i = 0;
+	int count = 0;
+	for (i = 100; i <= 200; i++)
+	{
+		int j = 0;
+		for (j = 2; j <= sqrt(i); j++)//sqrt是开平方数学库函数，所以需要引用头文件。#include<math.h>
+		{
+			if (i%j == 0)//如果为真则直接执行break跳出循环，但是这时的j会比i^（1/2）小，不会打印。
+			{
+				break;
+			}
+			//但是如果没有遇到余数为零的，就一直循环，j也会不断变化，直到不满足判定条件j<=sqrt（i），这时跳出循环j就会大于i^（1/2）
+		}
+		if (j > sqrt(i))
+		{
+			count++;
+			printf("%d ", i);
+		}
+	}
+	printf("\n%d\n", count);
+	return 0;
+}

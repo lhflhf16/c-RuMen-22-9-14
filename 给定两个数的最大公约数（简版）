@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int a = 24;
+	int b = 18;
+	scanf("%d%d", &a, &b);
+	while (a%b != 0)
+	{
+		int tmp = a;
+		a = b;
+		b = tmp%b;
+	}
+	printf("%d\n", b);
+	return 0;
+}

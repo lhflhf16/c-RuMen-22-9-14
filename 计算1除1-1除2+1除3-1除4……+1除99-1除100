@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+
+int main()
+{
+	int i = 0;
+	double r = 0.0;
+	double sum = 0.0;
+	for (i = 1; i <= 100; i++)
+	{
+		if (i % 2 == 0)
+		{
+			r = -1.0 / i;//平常写的5/2得到的答案是商数即为2，而不是小数2.5；2.5是浮点数，想要得到浮点数，那公式里也要有至少一个浮点数，所以这里把1改为1.0.
+		}
+		else
+		{
+			r = 1.0 / i;
+		}
+		sum += r;
+	}
+	printf("%lf\n", sum);
+	return 0;
+}

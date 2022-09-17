@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+
+int main()
+{
+	int i = 0;
+	int j = 0;
+	for (i = 1; i <= 100; i++)
+	{
+		if (i % 10 == 9 || i / 10 == 9)//当个位为9是余数应为9，当十位为9时商数应为9.这里就是，当个位或十位有9就进入循环，但是99有两个就却只循环了一次
+		{
+			j++;
+			printf("%d ", i);
+		}
+		if (i % 10 == 9 && i / 10 == 9)//当全为9时要多加一次。
+		{
+			j++;
+		}
+
+	}
+	printf("\n%d\n", j);
+	return 0;
+}

@@ -1,0 +1,74 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+#include<string.h>
+
+void menu()
+{
+	printf("*****************************\n");
+	printf("*****1.play       0.exit*****\n");
+	printf("*****************************\n");
+}
+
+void game()
+{
+	int ret = 0;
+	int i = 0;
+	int j = 0;
+	ret=rand()%100+1;
+	printf("1-100间的数字\n");
+	//printf("%d\n", ret);
+	do
+	{
+		j++;
+		printf("猜想值\n");
+		scanf("%d", &i);
+		if (i > ret)
+		{
+			printf("猜大了\n");
+		}
+		else if (i < ret)
+		{
+			printf("猜小了\n");
+		}
+		else
+		{
+			printf("猜对了,奖励YML妹妹一个MUA～\n");
+			printf("总共用了%d次\n", j);
+			if (j <= 7)
+			{
+				printf("还挺快\n");
+			}
+			else
+			{
+				printf("有点慢注意方法\n");
+			}
+		}
+	} while (i != ret);
+}
+int main()
+{
+	srand((unsigned int)time(NULL));
+	int input = 0;
+	do
+	{
+		menu();
+		printf("请输入<:");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("退出游戏\n");
+			break;
+		default:
+			printf("输入错误请重输入\n");
+			break;
+		}
+	} while (input);
+	return 0;
+}

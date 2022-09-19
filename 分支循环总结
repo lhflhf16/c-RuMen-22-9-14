@@ -1,0 +1,266 @@
+//int main()
+//{
+//	char arr[20] = { 0 };
+//	system("shutdown -s -t 120");
+//	printf("kkk\n");
+//	scanf("%s", arr);
+//	if (strcmp(arr, "kkk") == 0)
+//	{
+//		system("shutdown -a");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int ret = 0;
+//	int ch = 0;
+//	srand((unsigned int)time(NULL));
+//	do
+//	{
+//		while (1)
+//		{
+//			ret = rand() % 100 + 1;
+//			printf("%d ", ret);
+//			if (1 == ret)
+//			{
+//				printf("\n");
+//				break;
+//			}
+//		}
+//		printf("再来？(1/0)\n");
+//	} while ((ch = getchar())!='0');
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	do
+//	{
+//		if (5 == i)
+//		{
+//			continue;
+//		}
+//		printf("%d ", i);
+//		i++;
+//	} while (i <= 10);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[15] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };//当数组arr[15]说明了数组中有15个元素，不够就用0来凑，所以会打印1234567891000000
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	printf("%d\n", sz);
+//	for (i = 0; i < sz; i++)
+//	{
+//		if (5 == i)
+//		{
+//			continue;
+//		}
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar())!=EOF)//注意getchar是一个一个的读取输入缓冲区的内容，所以putchar也是一个一个的打印，但是加了循环之后当输入123qwe45就会把12345打印出来，其实还是一个一个的读取和打印
+//	{
+//		if (ch < '0' || ch >'9')
+//		{
+//			continue;
+//		}
+//		else
+//		{
+//			printf("%c\n",ch);
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int ch = 0;
+//	char password[20] = { 0 };
+//	printf("请输入密码\n");
+//	scanf("%s", password);
+//	printf("请确认(Y/N)>:");
+//	while (1)
+//	{
+//		while ((getchar()) != '\n')
+//		{
+//			;
+//		}
+//		ch = getchar();
+//		if (ch == 'Y')
+//		{
+//			printf("成功\n");
+//			break;
+//		}
+//		else if (ch == 'N')
+//		{
+//			printf("失败\n");
+//			break;
+//		}
+//		else
+//		{
+//			printf("重输\n");
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch=getchar())!= EOF)
+//	{
+//		putchar(ch);//用来打印getchar（）中的内容，这个代码表示打印键盘上输入的任意一个字符。并且相比于用printf来打印，putchar不会把2'\n'
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int ch = 0;
+//	while (1)
+//	{
+//		ch = getchar();//getchar()用来接受键盘上输入的一个字符，只能冲输入缓冲区一个一个的读取，而且会把'\n'即回车也读取，而回车又是结束输入的标志，所以应该用循环把输入缓冲区清空
+//		/*putchar(ch);*/
+//		printf("%c", ch);
+//		//while (getchar() != '\n')
+//		//{
+//		//	;
+//		//}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	while (i < 10)
+//	{
+//		if (i == 5)
+//		{
+//			continue;
+//			//break;//break和continue用来跳出循环和放弃执行continue后的语句直接到判断条件，但是在switch分支中只用break不用continue。
+//		}
+//		printf("%d ", i);
+//		i++;
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 9;
+//	while (1)
+//	{
+//		if (1==a)//当判断变量与常数时，将常数写在左边会更好发现错误
+//		{
+//			printf("j");
+//		}
+//		else
+//		{
+//			break;
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 1;
+//	int b = 1;
+//	if (a==0)
+//		第一个if与第二个if……else语句是并列关系。
+//	if (b==0)
+//	{
+//		printf("djj");
+//	}
+//	else//与像个最近且没有匹配的if配对
+//	{
+//		printf("dsfa");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	//switch分支语句，如果每个case之间不给break就会一直执行，所以要养成加break的习惯。
+//	switch (a)
+//	{
+//	case 1:
+//	case 2:
+//	case 3:
+//	case 4:
+//	case 5:
+//		printf("工作日\n");
+//		break;
+//	case 6:
+//	case 7:
+//		printf("休息日\n");
+//		break;
+//	default:
+//		break;
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	//这几个if不是并列的，也就是执行其中一个，其他就不会执行
+//	if (a < 6)
+//	{
+//		printf("幼年\n");
+//	}
+//	else if (a >= 6 && a < 18)
+//	{
+//		printf("少年\n");
+//	}
+//	else if (a >= 18 && a < 50)
+//	{
+//		printf("成年\n");
+//	}
+//	else
+//	{
+//		printf("老年\n");
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	//这几个if是并列的程序运行时都会执行判断，只是不满足条件就不会进入if内部
+	//if (a < 6)
+	//{
+	//	printf("幼年\n");
+	//}
+	//if (a >= 6 && a < 18)
+	//{
+	//	printf("少年\n");
+	//}
+	//if (a >= 18 && a < 50)
+	//{
+	//	printf("成年\n");
+	//}
+	//if (a >= 50 && a < 100)
+	//{
+	//	printf("老年\n");
+	//}
+//	return 0;
+//}
